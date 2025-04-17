@@ -1,27 +1,39 @@
-import tkinter, tkinter.messagebox
-import tkinter.tix
+import tkinter as tk
+import threading
 import pygame
 import time
+import random
 
 pygame.init()
 pygame.mixer.init()
-root = tkinter.Tk()
+root = tk.Tk()
 
-lavaChicken = pygame.mixer.Sound("lavaChicken.wav")
-chickenJocky = pygame.mixer.Sound("chicken_jockey.wav")
-myMessage = tkinter.Label(root, text = "CHICKEN JOCKEY!!!")
-myMessage.pack()
+lava_chicken = pygame.mixer.Sound("lavaChicken.wav")
+chicken_jocky = pygame.mixer.Sound("chicken_jockey.wav")
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
 
-def hangLabel(label):
-    pass
-
-def soundSpam():
-    lavaChicken.play()
+def sound_spam():
+    lava_chicken.play()
     for i in range(40):
-        chickenJocky.play()
+        chicken_jocky.play()
         time.sleep(0.8)
 
-print(soundSpam())
+def label_spam():
+    for i in range(40):
+        top = tk.Toplevel()
+        top.geometry(f"300x200+{random.randint(0, screen_width - 300)}+{random.randint(0, screen_height - 200)}")
+        top.title("I AM STEVE!!!")
+        myMessage = tk.Label(top, text="CHICKEN JOCKEY!!!", font=("Fixedsys", 20))
+        myMessage.pack(pady=60)
+        time.sleep(0.5)
 
-#Notes: Currently stuck on getting "Chicken Jockey" message to pop up alongside with soundSpam(). Need them to run concurrently with each other!!1
+def runBoth():
+    threading.Thread(target=sound_spam, daemon=True).start()
+    threading.Thread(target=label_spam, daemon=True).start()
 
+# Run both when GUI starts
+runBoth()
+
+# Start the Tkinter loop
+root.mainloop()
