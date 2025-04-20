@@ -9,7 +9,7 @@ A small, fun Python script that spams the screen with "Chicken Jockey" messages 
 
 ## TURNING SCRIPT INTO .EXE (OPTIONAL)
 1) **Install PyInstaller**: pip install pyinstaller
-2) **Run PyInstaller to generate the .exe**: pyinstaller --onefile --noconsole --add-data "assets;assets" bomb.py
+2) **Run PyInstaller to generate the .exe**: pyinstaller --onefile --noconsole --add-data "assets;assets" main.py
 
 ## CONTACT
 If you have any questions or feedback, please feel free to reach out:
