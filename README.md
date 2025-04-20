@@ -17,4 +17,4 @@ If you have any questions or feedback, please feel free to reach out:
 - Email: nghiatlam03@gmail.com
 
 ## GIF EXAMPLE:
-![Chicken Jockey Virus](https://github.com/NghiaLam2026/Sorting-Algorithm-Visualizer/assets/118234173/b5f70890-0515-4e99-9579-b4b6f94cf005)
+![ChickenJockeyGif](https://github.com/user-attachments/assets/a88ce0ec-40ae-4630-9b97-bd3dcf36a3e5)
